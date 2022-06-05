@@ -1,5 +1,16 @@
 const TelegramBot = require('node-telegram-bot-api');
+const express = require('express');
+
+const app = express();
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log('Run application on port ' + port);
+});
+
 const token = process.env.TELEGRAM_TOKEN;
+if (!token) {
+    console.log('Token should be provided');
+}
 const bot = new TelegramBot(token, {polling: true});
 
 const ownerId = 818230750;
