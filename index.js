@@ -21,7 +21,7 @@ bot.on('callback_query', query => {
            "Пожалуйста, оставьте следущие данные:\n—Модель, цвет и память устройства,\n—описание(ремонты, недостатки, состояние аккумулятора)\n—фото\n— номер для связи"
        )
        bot.on('message', msg => {
-           bot.sendMessage(ownerId, `Пользователь ${msg.from.first_name} ${msg.from.last_name} оставил заявку: ${msg.text}`);
+           bot.sendMessage(ownerId, `Пользователь ${msg.from.first_name} оставил заявку: ${msg.text}`);
            bot.sendMessage(msg.chat.id, 'Спасибо, мы свяжемся с вами!');
        });
    }
